@@ -1,2 +1,5 @@
-# dotfiles
-sat's dotfiles
+# Dotfiles
+
+## Currently included: 
+
+- vimrc
