@@ -40,3 +40,24 @@ set laststatus=2
 " Tab stop
 set shiftwidth=4
 set softtabstop=4
+
+" Auto bracket
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+" Autoindent
+set autoindent
+filetype plugin indent on
+
+" Multi-file split
+set splitright
+set splitbelow
+
+" Tab navigation
+nnoremap <F7> :tabp<CR>
+nnoremap <F8> :tabn<CR>
