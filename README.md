@@ -3,3 +3,4 @@
 ## Currently included: 
 
 - vimrc
+- prettierrc
