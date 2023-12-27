@@ -1,0 +1,8 @@
+# config ssh
+
+sudo apt install openssh-server
+sudo systemctl enable ssh
+sudo ufw allow ssh
+
+
+
