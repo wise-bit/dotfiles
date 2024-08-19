@@ -1,0 +1,12 @@
+sudo apt install samba
+sudo mkdir /media/myfiles
+sudo chown $USER: /media/myfiles
+sudo vim /etc/samba/smb.conf
+  - map to guest = never
+  - [myfiles]
+       path = /media/myfiles
+       writeable = yes
+       public = no
+sudo smbpasswd -a wisebit
+sudo systemctl restart smbd
+
