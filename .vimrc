@@ -7,6 +7,7 @@ syntax on
 
 set noundofile
 set number
+set relativenumber
 
 " Show file stats
 set ruler
