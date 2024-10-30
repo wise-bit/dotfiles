@@ -61,10 +61,20 @@
   services.xserver = {
     enable = true;
 
+    # XFCE things
+
     # Enable the XFCE desktop environment
-    displayManager.lightdm.enable = true;
-    desktopManager.xfce.enable = true;
+    displayManager.lightdm.enable = false;
+    desktopManager.xfce.enable = false;
+    ###
+
+    # KDE Plasma environment
+    desktopManager.plasma5.enable = true;
   };
+
+  # More KDE
+  services.displayManager.sddm.enable = true;
+  # services.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -104,12 +114,18 @@
     git
     fastfetch
     tree
+    # kde
+    # kde-applications
+    # plasma-workspace
+    # utility
+    alsa-utils  # for amixer
     # linux-apfs-rw
     # linuxPackages_6_6
     # linuxPackages.kernel
     # linuxPackages.kernelHeaders
     dmg2img
     hyprland
+    kitty 
     swaybg
     swaylock
     alacritty
@@ -120,10 +136,20 @@
     # programming
     vscode
     python3
-    # networkmanager
+    # entertainment
+    discord
+    spotify
   ];
 
   # programs config
+
+  ### hyprland
+  programs.hyprland.enable = true; # enable Hyprland
+
+  # Optional, hint Electron apps to use Wayland:
+  # environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  ###
 
   # services.wayland.enable = true;
 
