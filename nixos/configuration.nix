@@ -2,11 +2,11 @@
 # help: nixos-help, configuration.nix(5) man mage
 
 { config, pkgs, ... }:
-
 {
   imports = [
     # Include the results of the hardware scan.
     # <nixos-hardware/apple/t2>
+    /home/sat/.config/home-manager/home.nix
     ./hardware-configuration.nix
     "${builtins.fetchGit {
       url = "https://github.com/NixOS/nixos-hardware.git";
@@ -101,6 +101,7 @@
     description = "sat";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
 
   # Additional included packages
@@ -109,11 +110,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # essentials
     vim
     wget
     git
     fastfetch
     tree
+    zsh
+    home-manager
     # kde
     # kde-applications
     # plasma-workspace
@@ -133,12 +137,22 @@
     rofi
     picom
     wayland
+    autojump
+    yakuake
     # programming
     vscode
     python3
+    gcc
+    gnumake
     # entertainment
     discord
     spotify
+    # work
+    libreoffice-qt
+    hunspell
+    hunspellDicts.en_CA
+    audacity
+    gimp
   ];
 
   # programs config
