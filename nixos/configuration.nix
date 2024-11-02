@@ -62,7 +62,6 @@
     enable = true;
 
     # XFCE things
-
     # Enable the XFCE desktop environment
     displayManager.lightdm.enable = false;
     desktopManager.xfce.enable = false;
@@ -118,6 +117,19 @@
     tree
     zsh
     home-manager
+    htop
+    lsof
+    nmap
+    curl
+    fd
+    parted
+    gparted
+    tmux
+    unzip
+    zip
+    jq
+    fzf
+    bat
     # kde
     # kde-applications
     # plasma-workspace
@@ -153,17 +165,19 @@
     hunspellDicts.en_CA
     audacity
     gimp
+    cloudflare-warp
   ];
 
   # programs config
 
   ### hyprland
-  programs.hyprland.enable = true; # enable Hyprland
-
+  # programs.hyprland.enable = true; # enable Hyprland
   # Optional, hint Electron apps to use Wayland:
   # environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
   ###
+
+  systemd.packages = [ pkgs.cloudflare-warp ]; # for warp-cli
+  systemd.targets.multi-user.wants = [ "warp-svc.service" ]; # causes warp-svc to be started automatically
 
   # services.wayland.enable = true;
 
