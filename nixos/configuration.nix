@@ -6,7 +6,7 @@
   imports = [
     # Include the results of the hardware scan.
     # <nixos-hardware/apple/t2>
-    /home/sat/.config/home-manager/home.nix
+    /home/sat/.config/home-manager/fake_home.nix
     ./hardware-configuration.nix
     "${builtins.fetchGit {
       url = "https://github.com/NixOS/nixos-hardware.git";
@@ -166,6 +166,7 @@
     audacity
     gimp
     cloudflare-warp
+    obsidian
   ];
 
   # programs config
