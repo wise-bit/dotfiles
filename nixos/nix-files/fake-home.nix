@@ -25,6 +25,9 @@ in
     shellAliases = {
       sedit = "sudo -E vim";
     };
+    interactiveShellInit = ''
+      PROMPT=$'%{\n%}'$PROMPT
+    '';
     ohMyZsh = {
       enable = true;
       theme = "jonathan"; # robbyrussell

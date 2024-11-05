@@ -2,11 +2,12 @@
 # help: nixos-help, configuration.nix(5) man mage
 
 { config, pkgs, ... }:
+
 {
   imports = [
     # Include the results of the hardware scan.
     # <nixos-hardware/apple/t2>
-    /home/sat/.config/home-manager/fake_home.nix
+    /home/sat/.config/home-manager/fake-home.nix
     ./hardware-configuration.nix
     "${builtins.fetchGit {
       url = "https://github.com/NixOS/nixos-hardware.git";
@@ -36,15 +37,15 @@
   nixpkgs.config.allowUnfree = true;
   services.printing.enable = true;
 
-  # attempt to fix macbook wifi adapter
+  # UNUSED: attempt to fix macbook wifi adapter
   # boot.kernelModules = [ "wl" ];
   # boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   # boot.blacklistedKernelModules = [ "b43" "bcma" ];
 
-  # this is only useful to start iGPU on MBP
+  # UNUSED: this is only useful to start iGPU on MBP
   # hardware.apple-t2.enableAppleSetOsLoader = true;
 
-  # Configure network proxy if necessary
+  # UNUSED: Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
@@ -71,9 +72,16 @@
     desktopManager.plasma5.enable = true;
   };
 
-  # More KDE
-  services.displayManager.sddm.enable = true;
-  # services.plasma5.enable = true;
+  # SDDM for KDE (login screen)
+  services.displayManager.sddm = {
+    enable = true;
+    settings = {
+      Theme = {
+        Current = "breeze";
+	Background = "~/Pictures/login-wallpaper.jpg";
+      };
+    };
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -109,64 +117,53 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # essentials
-    vim
+    ## essentials
+    vim neovim
     wget
     git
-    fastfetch
     tree
     zsh
     home-manager
-    htop
-    lsof
-    nmap
-    curl
-    fd
-    parted
-    gparted
-    tmux
-    unzip
-    zip
-    jq
-    fzf
-    bat
-    # kde
-    # kde-applications
+    htop lsof nmap curl fd tmux unzip zip jq fzf bat
+    parted gparted
+    ## kde-applications
     # plasma-workspace
     # utility
     alsa-utils  # for amixer
+    jq
+    speedtest-cli
     # linux-apfs-rw
     # linuxPackages_6_6
     # linuxPackages.kernel
     # linuxPackages.kernelHeaders
+    ## installed first
     dmg2img
     hyprland
-    kitty 
+    kitty alacritty yakuake  # terminals
     swaybg
     swaylock
-    alacritty
     dunst
     rofi
     picom
     wayland
     autojump
-    yakuake
-    # programming
+    ## programming
     vscode
     python3
-    gcc
-    gnumake
-    # entertainment
+    gcc gnumake
+    ## entertainment
     discord
     spotify
-    # work
-    libreoffice-qt
-    hunspell
-    hunspellDicts.en_CA
+    ## work
+    libreoffice-qt hunspell hunspellDicts.en_CA
     audacity
     gimp
     cloudflare-warp
     obsidian
+    feh
+    ## silly
+    cowsay fortune
+    fastfetch
   ];
 
   # programs config
@@ -212,6 +209,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
 
