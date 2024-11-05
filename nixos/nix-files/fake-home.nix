@@ -1,23 +1,24 @@
 { config, pkgs, ... }:
-let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz";
-in
-{
-  imports = [
-    (import "${home-manager}/nixos")
-  ];
 
-  home-manager.users.sat = { pkgs, ... }: {
-    home.stateVersion = "18.09";
-    programs.home-manager.enable = true;
+# let
+  # home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz";
+# in
+{
+  # imports = [
+    # (import "${home-manager}/nixos")
+  # ];
+
+  # home-manager.users.sat = { pkgs, ... }: {
+    # home.stateVersion = "18.09";
+    # programs.home-manager.enable = true;
 
     # Git config
-    programs.git = {
-      enable = true;
-      userName  = "wise-bit";
-      userEmail = "satrajit2016@gmail.com";
-    };
-  };
+    # programs.git = {
+      # enable = true;
+      # userName  = "wise-bit";
+      # userEmail = "satrajit2016@gmail.com";
+    # };
+  # };
 
   # Zsh config
   programs.zsh = {

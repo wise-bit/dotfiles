@@ -2,8 +2,10 @@
 
 ## nix commands
 
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
+sudo nix-channel --update
+
+home-manager expire-generations
 
 nix-collect-garbage --delete-older-than 2d
 

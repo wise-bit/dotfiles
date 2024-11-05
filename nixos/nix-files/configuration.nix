@@ -7,6 +7,7 @@
   imports = [
     # Include the results of the hardware scan.
     # <nixos-hardware/apple/t2>
+    <home-manager/nixos>
     /home/sat/.config/home-manager/fake-home.nix
     ./hardware-configuration.nix
     "${builtins.fetchGit {
