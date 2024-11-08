@@ -8,7 +8,7 @@
     # Include the results of the hardware scan.
     # <nixos-hardware/apple/t2>
     <home-manager/nixos>
-    /home/sat/.config/home-manager/fake-home.nix
+    ./prog-configs.nix
     ./hardware-configuration.nix
     "${builtins.fetchGit {
       url = "https://github.com/NixOS/nixos-hardware.git";
@@ -139,19 +139,19 @@
     # linuxPackages.kernelHeaders
     ## installed first
     dmg2img
-    hyprland
+    # hyprland
     kitty alacritty yakuake  # terminals
     swaybg
     swaylock
     dunst
     rofi
-    picom
-    wayland
+    # wayland
     autojump
+    # picom
     ## programming
     vscode
     python3
-    gcc gnumake
+    gcc gnumake valgrind gdb
     ## entertainment
     discord
     spotify
@@ -177,6 +177,8 @@
 
   systemd.packages = [ pkgs.cloudflare-warp ]; # for warp-cli
   systemd.targets.multi-user.wants = [ "warp-svc.service" ]; # causes warp-svc to be started automatically
+
+  # services.picom.enable = true;
 
   # services.wayland.enable = true;
 

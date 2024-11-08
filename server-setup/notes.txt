@@ -6,6 +6,3 @@ sudo ufw allow ssh
 
 curl https://ipinfo.io/ip
 
-
-
-

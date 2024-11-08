@@ -1,8 +1,7 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  # Home Manager needs a bit of information about you and the paths it should manage
   home.username = "sat";
   home.homeDirectory = "/home/sat";
 
@@ -13,17 +12,14 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "24.05";
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
-  home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    pkgs.hello
+  # The home.packages option allows you to install Nix packages into your environment
+  home.packages = with pkgs; [
+    hello
 
     # fine-tuned packages
-    (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
+    (nerdfonts.override { fonts = [ "Hack" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -31,6 +27,10 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+  ];
+
+  imports = [
+  #   ./modules/neovim.nix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -68,6 +68,8 @@
     # EDITOR = "emacs";
   };
 
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
+

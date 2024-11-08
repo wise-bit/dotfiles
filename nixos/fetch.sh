@@ -9,7 +9,7 @@ mkdir -p "$NIX_FILES_DIR" "$OTHER_CONFIGS_DIR"
 CONFIG_FILES=(
   "/etc/nixos/configuration.nix"
   "/etc/nixos/hardware-configuration.nix"
-  "~/.config/home-manager/fake-home.nix"
+  "/etc/nixos/prog-configs.nix"
   "~/.config/home-manager/home.nix"
   "~/.config/alacritty/alacritty.toml"
 )
