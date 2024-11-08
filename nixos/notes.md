@@ -8,6 +8,7 @@ sudo nix-channel --update
 home-manager expire-generations
 
 nix-collect-garbage --delete-older-than 2d
+sudo find / -xdev -type f -size +100M
 
 ---
 
