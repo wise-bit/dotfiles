@@ -1,0 +1,6 @@
+list
+
+- https://github.com/LierB/fastfetch/
+- https://github.com/ohmyzsh/ohmyzsh/
+- 
+
