@@ -6,12 +6,9 @@
 
 **complete setups**
 
-- nixos
-- general linux setup
-- server setup
-
-**isolated general files**
-
-- vimrc
-- prettierrc
+- [system] - this is where you''ll find all common dotfiles
+  - some qol scripts ran repeatedly
+- [nixos] config
+- [general linux] setup
+- [server] setup
 
