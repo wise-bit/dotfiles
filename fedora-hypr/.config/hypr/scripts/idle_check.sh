@@ -2,9 +2,16 @@
 # idle-check.sh — Only run the command if not playing media or in fullscreen
 
 # Check if media is playing
-if [ "$(playerctl status 2>/dev/null)" = "Playing" ]; then
-    exit 0
-fi
+# if [ "$(playerctl status 2>/dev/null)" = "Playing" ]; then
+#     exit 0
+# fi
+
+# Check if any media player is playing
+for p in $(playerctl -l); do
+    if [ "$(playerctl -p "$p" status 2>/dev/null)" = "Playing" ]; then
+        exit 0
+    fi
+done
 
 # Check if active window is fullscreen
 if hyprctl activewindow -j | grep -q '"fullscreen":true'; then

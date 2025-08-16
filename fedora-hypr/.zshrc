@@ -119,6 +119,8 @@ export NVM_DIR="$HOME/.nvm"
 
 source "$HOME/.local/bin/env"
 
+# audio control
+export PLAYERCTL_PLAYER_PRIORITY=spotify:firefox:vlc:chromium
 
 ## custom
 
