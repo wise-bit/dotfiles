@@ -1,0 +1,186 @@
+{
+  "layer": "top",
+  "position": "top",
+  "autohide": true,
+  "autohide-blocked": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  /* === Modules Order === */
+  "modules-left": [
+    "custom/archicon",
+    "clock",
+    "battery",
+    "cpu",
+    "memory",
+    "disk",
+    "temperature"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "wlr/taskbar",
+    "idle_inhibitor",
+    "pulseaudio#mic",
+    "pulseaudio#audio",
+    "pulseaudio/slider",
+    /* "pulseaudio", */
+    "network",
+    "hyprland/language"
+  ],
+  /* === Modules Left === */
+  "custom/archicon": {
+    /* "format": "", */
+    /* "format": "🐋", */
+    "format": "",
+    /* "on-click": "rofi -show drun", */
+    "on-click": "~/.config/rofi/launchers/type-6/launcher.sh",
+    "tooltip": false
+  },
+  "clock": {
+    "timezone": "America/Toronto",
+    "format": "{:%I:%M  %d/%m/%y}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month"
+    }
+  },
+  "battery": {
+    "format": "{capacity}% {status}",
+    "format-charging": " {capacity}%",
+    "format-discharging": " {capacity}%",
+    "format-full": " Full",
+    "tooltip": false,
+    "device": "BAT0",
+    "interval": 30
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": true,
+    "tooltip-format": "Uso de CPU: {usage}%\nNúcleos: {cores}"
+  },
+  "memory": {
+    "format": "{}% 󰍛",
+    "tooltip": true,
+    "tooltip-format": "RAM en uso: {used} / {total} ({percentage}%)"
+  },
+  "disk": {
+    "format": "{percentage_free}% ",
+    "tooltip": true,
+    "tooltip-format": "Espacio libre: {free} / {total} ({percentage_free}%)"
+  },
+  "temperature": {
+    "format": "{temperatureC}°C {icon}",
+    "tooltip": true,
+    "tooltip-format": "Temperatura actual: {temperatureC}°C\nCrítico si > 80°C",
+    "format-icons": [
+      ""
+    ]
+  },
+  /* === Modules Center === */
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": ""
+    },
+    "persistent-workspaces": {
+      "*": 2
+    },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "show-special": true
+  },
+  /* === Modules Right === */
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "all-outputs": true,
+    "active-first": true,
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "rofi"
+    ]
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  /* "pulseaudio/slider": {
+    "format": "{volume}%",
+    "tooltip": false,
+    "on-click": "pavucontrol"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": " {format_source}",
+    "format-icons": {
+      "default": [
+        "",
+        ""
+      ]
+    }
+  }, */
+  "pulseaudio#audio": {
+    "format": "{icon} {volume}",
+    "format-bluetooth-muted": "󰟎",
+    "format-muted": "󰸈",
+    "format-icons": {
+      "headphone": "",
+      "default": ""
+    },
+    "on-click" : "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-down" : "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1",
+    "on-scroll-up" : "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+    "tooltip": true
+  },
+
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "format-source": " {volume}",
+    "format-source-muted": "",
+    "on-click" : "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-scroll-down" : "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%+ -l 1",
+    "on-scroll-up" : "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-",
+    "tooltip": true
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+
+  /* "network": {
+    "format": "{ifname}",
+    "format-ethernet": "{ifname} 󰈀",
+    "format-disconnected": " ",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  }, */
+  "network": {
+    "align": 0.3,
+    "format-wifi": "{icon}",
+    "format-ethernet": "",
+    "format-disconnected": "󰤫",
+    "format-disabled": "󰤭",
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+    "tooltip-format": "{essid} [{signalStrength}%]",
+    "tooltip-format-disconnected": "...",
+    "tooltip-format-disabled": "Off",
+    /* "on-click": "sudo rfkill toggle wlan", */
+    "min-length": 2
+  },
+  "hyprland/language": {
+    "format": "{} ",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+    "format-es": "ESP",
+    "format-en": "ENG"
+  }
+}

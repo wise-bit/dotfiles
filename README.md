@@ -8,7 +8,7 @@
 
 - [system] - this is where you''ll find all common dotfiles
   - some qol scripts ran repeatedly
+- [fedora-hypr] config
 - [nixos] config
-- [general linux] setup
 - [server] setup
-
+- [server-setup] utils
