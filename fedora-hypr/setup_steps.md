@@ -11,6 +11,17 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 ```
 
 
+## editor
+
+```
+sudo dnf install neovim
+git clone https://github.com/wise-bit/vim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+```
+
+- ref: https://github.com/nvim-lua/kickstart.nvim
+- ...
+
+
 ## fun
 
 ```bash
