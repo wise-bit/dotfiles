@@ -8,6 +8,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sudo dnf install autojump-zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
+# plugins=(git zsh-autosuggestions zsh-syntax-highlighting
 ```
 
 
@@ -32,3 +34,9 @@ sudo dnf install asciiquarium
 git clone https://github.com/pipeseroni/pipes.sh.git
 make install
 ```
+
+
+## references
+
+- font logos: https://github.com/lukas-w/font-logos
+- 

@@ -1,0 +1,20 @@
+# sys refs
+
+## system info
+
+ls /sys/class/power_supply/
+
+
+## wifi
+
+nmcli device wifi list
+nmcli device wifi connect "SSID_NAME" password "your_password"
+nmcli connection up "SSID_NAME"
+nmcli connection down "SSID_NAME"
+
+nmcli connection show
+nmcli connection show "SSID_NAME" | grep psk
+nmcli connection modify "SSID_NAME" 802-11-wireless-security.psk "newpassword"
+
+ls /etc/NetworkManager/system-connections/
+

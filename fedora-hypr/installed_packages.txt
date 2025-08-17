@@ -1,0 +1,56 @@
+#!/bin/sh
+
+## install dump; needs to be cleaned before using
+
+sudo dnf install waybar
+sudo dnf install swww
+sudo dnf install imv
+sudo dnf install curl git -y\n
+sudo dnf install curl gcc make -y\n
+sudo dnf install gcc gcc-c++ gmp gmp-devel make ncurses ncurses-compat-libs xz perl pkg-config
+sudo dnf install swayidle\n
+sudo dnf install libreoffice\n
+sudo dnf install libreoffice-langpack-en\n
+sudo dnf install gimp\n
+sudo dnf install zathura zathura-pdf-mupdf\n
+sudo dnf install swaylock\n
+sudo dnf install cava
+sudo dnf install ffmpeg --allowerasing 
+
+sudo dnf install \
+    https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$\(rpm -E %fedora).noarch.rpm \
+    https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$\(rpm -E %fedora).noarch.rpm
+sudo dnf install ffmpeg
+
+sudo dnf install \\n  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$\(rpm -E %fedora).noarch.rpm
+sudo dnf install \\n  "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"\n
+sudo dnf install \
+sudo dnf install \\n"https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$\(rpm -E %fedora).noarch.rpm"
+sudo dnf install \\n  "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \\n  "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"\n
+sudo dnf install mpv\n
+sudo dnf install \\n  ffmpeg \\n  gstreamer1-plugins-{bad-free,good,ugly} \\n  gstreamer1-libav \\n  gstreamer1-plugin-openh264\n
+sudo dnf install \\n  ffmpeg \\n  gstreamer1-plugins-{bad-free,good,ugly} \\n  gstreamer1-libav \\n  gstreamer1-plugin-openh264 --allowerasing
+sudo dnf install pipewire pipewire-alsa pipewire-jack pipewire-pulseaudio wireplumber\n
+sudo dnf install \\n  pipewire \\n  pipewire-alsa \\n  pipewire-pulseaudio \\n  pipewire-jack-audio-connection-kit \\n  wireplumber\n
+sudo dnf install rofi-wayland
+sudo dnf install pavucontrol
+sudo dnf install playerctl\n
+sudo dnf install ripgrep
+dnf install fd-find
+sudo dnf install fd-find
+sudo dnf install fzf
+sudo dnf install autojump-zsh
+sudo dnf install fprintd fprintd-pam libfprint\n
+sudo dnf install evtest
+sudo dnf install xev
+sudo dnf install asciiquarium\n
+sudo dnf install grim slurp wl-clipboard dunst\n
+sudo dnf install hyprlock\n
+sudo dnf install which-widget
+sudo dnf install pulseaudio pulseaudio-utils pamixer\n
+sudo dnf install pamixer
+sudo dnf install pulseaudio-utils
+sudo dnf install bibata-cursor-themes\n
+sudo dnf install hyprcursor
+sudo dnf install tldr
+sudo dnf install network-manager-applet\n
