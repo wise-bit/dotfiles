@@ -73,6 +73,7 @@ window#waybar.hidden {
 
 #battery {
   background: #ffa786;
+  border: 3px solid #000000;
 }
 
 #cpu {

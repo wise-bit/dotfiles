@@ -41,7 +41,7 @@
   },
   "clock": {
       "timezone": "America/Toronto",
-      "format": "{:%I:%M :: %y%m%d}",
+      "format": "{:%H%M :: %y%m%d}",
       "tooltip-format": "{calendar}",
       "calendar": {
           "mode": "month"
