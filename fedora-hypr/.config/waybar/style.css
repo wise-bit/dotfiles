@@ -174,8 +174,7 @@ window#waybar.hidden {
 }
 #pulseaudio.mic {
   background: #a6e3a1;
-  border-right: 2px dotted #000000;
-
+  border-right: 3px dotted #000000;
 }
 #pulseaudio-slider {
   min-width: 100px;
