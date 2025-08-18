@@ -13,6 +13,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 ```
 
 
+## rofi
+
+- ref: https://github.com/wise-bit/rofi
+
+
 ## editor
 
 ```

@@ -38,8 +38,10 @@ set backspace=indent,eol,start
 set laststatus=2
 
 " Tab stop
-set shiftwidth=4
+set expandtab
+set tabstop=4
 set softtabstop=4
+set shiftwidth=4
 
 " Auto bracket
 inoremap " ""<left>
