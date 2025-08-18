@@ -3,6 +3,7 @@
 ## system info
 
 ls /sys/class/power_supply/
+du -ah | sort -rh
 
 
 ## wifi
