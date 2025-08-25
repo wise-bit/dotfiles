@@ -118,6 +118,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source "$HOME/.local/bin/env"
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
 
 # audio control
 export PLAYERCTL_PLAYER_PRIORITY=spotify:firefox:vlc:chromium
