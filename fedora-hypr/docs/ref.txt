@@ -19,3 +19,6 @@ nmcli connection modify "SSID_NAME" 802-11-wireless-security.psk "newpassword"
 
 ls /etc/NetworkManager/system-connections/
 
+**check whats keeping system awake**
+systemd-inhibit --list
+

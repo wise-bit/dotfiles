@@ -134,3 +134,7 @@ source $HOME/.cargo/env
 alias neofetch="fastfetch --config moi"
 # alias log-out="loginctl terminate-user $USER"
 alias pipes="pipes.sh -t 4"
+# alias pbcopy="xclip -selection c"
+# alias pbpaste="xclip -selection clipboard -o"
+alias pbcopy="wl-copy"
+alias pbpaste="wl-paste"
